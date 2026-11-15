@@ -28,7 +28,7 @@ test('POST /projetos cria um novo projeto com sucesso e retorna status 201', asy
 
 
 
-test('POST /projetos retorna status 400 ao tentar criar projeto sem descrição', async () => {
+test('ERRO: POST /projetos retorna status 400 ao tentar criar projeto sem descrição', async () => {
   const projetoSemDescricao = {
     nome: 'Projeto Sem Descrição',
     valor: 150
