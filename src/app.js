@@ -11,6 +11,10 @@ const simulacaoDB = [
   { id: 3, nome: "Gabriel", valor: 145, descricao: "c"}
 ];
 
+app.get('/index', (req, res) => {
+    res.sendFile('views/index.html', { root: __dirname });
+});
+
 app.get('/projetos', (req, res) => {
   res.status(200).json(simulacaoDB);
 });
