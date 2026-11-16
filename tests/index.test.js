@@ -1,6 +1,5 @@
 const { Builder, By } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const chromedriver = require('chromedriver');
 const path = require('path');
 
 jest.setTimeout(30000);
@@ -15,12 +14,9 @@ describe('Teste de Interface - Página Inicial', () => {
     options.addArguments('--disable-dev-shm-usage');
     options.addArguments('--disable-gpu');
 
-    const service = new chrome.ServiceBuilder(chromedriver.path);
-
     driver = await new Builder()
       .forBrowser('chrome')
       .setChromeOptions(options)
-      .setChromeService(service)
       .build();
   });
 
