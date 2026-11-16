@@ -8,6 +8,13 @@ describe('Teste de Interface - Página Inicial', () => {
   let driver;
 
   beforeAll(async () => {
+    if (process.env.PATH) {
+      process.env.PATH = process.env.PATH
+        .split(':')
+        .filter((dir) => !dir.includes('node_modules'))
+        .join(':');
+    }
+
     const options = new chrome.Options();
     options.addArguments('--headless=new');
     options.addArguments('--no-sandbox');
